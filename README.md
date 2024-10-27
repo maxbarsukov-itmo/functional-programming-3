@@ -4,7 +4,7 @@
 [![Markdown](https://github.com/maxbarsukov-itmo/functional-programming-3/actions/workflows/markdown.yml/badge.svg?branch=master)](https://github.com/maxbarsukov-itmo/functional-programming-3/actions/workflows/markdown.yml)
 [![Coverage Status](https://coveralls.io/repos/github/maxbarsukov-itmo/functional-programming-3/badge.svg?branch=master)](https://coveralls.io/github/maxbarsukov-itmo/functional-programming-3?branch=master)
 
-<img alt="bumps" src="./.resources/anime.gif" height="240">
+<img alt="bumps" src="./.resources/anime.gif" height="280">
 
 > [!TIP]
 > Ah shit, here we go again...
@@ -144,13 +144,25 @@ o o o o o o . . x x x
   * Языки с параллельным программированием и акторами -- используйте их.
   * Язык без всей этой прелести -- используйте генераторы/итераторы/и т.п.
 
+---
+
 ## Выполнение
 
 ### Архитектура приложения
 
+...
+
 ### Ключевые элементы реализации
 
+...
+
+### Как запустить?
+
+...
+
 ### Пример работы программы
+
+...
 
 ### Форматирование, линтинг и тестирование
 
@@ -161,6 +173,28 @@ o o o o o o . . x x x
   * [Credo](https://github.com/rrrene/credo) - инструмент статического анализа кода для языка Elixir;
   * [Dialyxir](https://github.com/jeremyjh/dialyxir) - Dialyz~~er~~xir is a **DI**screpancy **A**na**LY**zer for ~~**ER**lang~~ Eli**XIR** programs.
 
+---
+
 ## Выводы
 
 В данной лабораторной работе ...
+
+---
+
+## Полезные ссылки
+
+| Ссылка | Описание |
+| --- | --- |
+| [github.com/maxbarsukov/itmo/4 вычмат/лабораторные/lab5](https://github.com/maxbarsukov/itmo/tree/master/4%20%D0%B2%D1%8B%D1%87%D0%BC%D0%B0%D1%82/%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5/lab5) | **Вычмат**: ЛР 5 по **интерполяции** функции |
+| [en.wikipedia.org/wiki/Interpolation](https://en.wikipedia.org/wiki/Interpolation) | Что такое интерполяция? |
+| [elixirschool.com/ru/lessons/intermediate/concurrency](https://elixirschool.com/ru/lessons/intermediate/concurrency) | Параллелизм в Elixir |
+| [habr.com/ru/articles/114232/](https://habr.com/ru/articles/114232/) | Erlang и его процессы |
+| [perso.ens-lyon.fr/laurent.modolo/unix/7_streams_and_pipes.html](https://perso.ens-lyon.fr/laurent.modolo/unix/7_streams_and_pipes.html) | Unix Streams and pipes |
+| [habr.com/ru/companies/ruvds/articles/656567/](https://habr.com/ru/companies/ruvds/articles/656567/) | Конвейеры в Linux |
+
+## Лицензия <a name="license"></a>
+
+Проект доступен с открытым исходным кодом на условиях [Лицензии MIT](https://opensource.org/license/mit/). \
+*Авторские права 2024 Max Barsukov*
+
+**Поставьте звезду :star:, если вы нашли этот проект полезным.**
