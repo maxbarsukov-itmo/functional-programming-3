@@ -38,7 +38,8 @@ fp_lab3-*.tar
 .vscode/
 .code-workspace
 !.vscode/launch.json
-!.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/extensions.json
 
 ### Log files ###
 *.log
