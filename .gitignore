@@ -23,6 +23,9 @@ erl_crash.dump
 fp_lab3-*.tar
 # Temporary files, for example, from tests.
 /tmp/
+# Generated executables
+/out/
+!/out/.keep
 
 ### IntelliJ IDEA ###
 .idea/

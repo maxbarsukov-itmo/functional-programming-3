@@ -10,6 +10,7 @@ defmodule FpLab3.MixProject do
   def project do
     [
       app: :fp_lab3,
+      escript: escript(),
       elixir: "~> 1.17",
       elixirc_paths: elixirc_paths(Mix.env()),
       preferred_cli_env: [
@@ -34,6 +35,14 @@ defmodule FpLab3.MixProject do
       description: description(),
       package: package(),
       version: @version
+    ]
+  end
+
+  defp escript do
+    [
+      main_module: InterpolationApp.Main,
+      path: "./out/interpolation-app",
+      name: "interpolation-app"
     ]
   end
 
