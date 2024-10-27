@@ -1,4 +1,7 @@
 {
+  // I can set heading levels at my discretion!
+  "MD001": false,
+
   // Style of unordered lists..
   "MD007": {
     "indent": 2,
