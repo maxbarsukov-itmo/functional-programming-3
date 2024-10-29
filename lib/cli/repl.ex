@@ -19,22 +19,36 @@ defmodule InterpolationApp.CLI.Repl do
 
   defp loop(applier_pid) do
     :io.setopts(:standard_io, active: true)
-    input = IO.gets("")
-
-    if input == :eof or String.trim(input) == "quit" do
-      IO.puts("\nСпасибо за использование программы!\n")
-
-      IO.puts("""
-            |\      _,,,---,,_
-      ZZZzz /,`.-'`'    -.  ;-;;,_
-          |,4-  ) )-,_. ,\ (  `'-'
-          '---''(_/--'  `-'\_)
-      """)
-
-      System.halt()
-    end
+    input = IO.gets("") |> check_quit
 
     GenServer.cast(applier_pid, {:apply_input, String.trim(input)})
     loop(applier_pid)
+  end
+
+  defp check_quit(input) do
+    if input == :eof do
+      :timer.sleep(100)
+      quit()
+    end
+
+    if String.trim(input) == "quit" do
+      quit()
+    end
+
+    input
+  end
+
+  @spec quit() :: no_return()
+  defp quit do
+    IO.puts("\nСпасибо за использование программы!\n")
+
+    IO.puts("""
+          |\      _,,,---,,_
+    ZZZzz /,`.-'`'    -.  ;-;;,_
+        |,4-  ) )-,_. ,\ (  `'-'
+        '---''(_/--'  `-'\_)
+    """)
+
+    System.halt()
   end
 end

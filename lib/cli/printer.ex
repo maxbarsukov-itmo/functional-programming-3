@@ -34,7 +34,7 @@ defmodule InterpolationApp.CLI.Printer do
     {first_x, _} = List.first(result)
 
     IO.puts(
-      "#{method.get_name()} (идем от точки из введенных #{first_x} с шагом #{step}, покрывая все введенные X)"
+      ">> #{method.get_name()} (идем от точки из введенных #{first_x} с шагом #{step}, покрывая все введенные X)"
     )
 
     print_line(result, accuracy)

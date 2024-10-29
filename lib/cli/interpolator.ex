@@ -27,22 +27,34 @@ defmodule InterpolationApp.CLI.Interpolator do
   @impl true
   def handle_cast({:add_point, point}, {points, config, printer_pid}) do
     points = Enum.reverse([point | Enum.reverse(points)])
-    methods = Enum.uniq([config.method1, config.method2])
 
-    Enum.each(methods, fn method ->
-      if method.points_enough?(points) do
-        limit = method.get_enough_points_count()
-        interpolation_points = Enum.slice(points, -limit, limit)
-        generated_points = PointGenerator.generate(interpolation_points, config.step)
-
-        GenServer.cast(printer_pid, {
-          :print,
-          method,
-          method.interpolate(interpolation_points, generated_points)
-        })
-      end
+    Enum.each(config.methods, fn method ->
+      handle_method(method, points, printer_pid, config)
     end)
 
     {:noreply, {points, config, printer_pid}}
+  end
+
+  # Helper Functions
+
+  defp handle_method(method, points, printer_pid, config) do
+    if method.points_enough?(points) do
+      limit = method.get_enough_points_count()
+
+      interpolation_points =
+        if method.need_concrete_number_of_points?(),
+          do: Enum.slice(points, -limit, limit),
+          else: points
+
+      generated_points = PointGenerator.generate(interpolation_points, config.step)
+
+      GenServer.cast(printer_pid, {
+        :print,
+        method,
+        method.interpolate(interpolation_points, generated_points)
+      })
+    end
+
+    :ok
   end
 end

@@ -12,7 +12,12 @@ defmodule InterpolationApp.Main do
       System.halt()
     end
 
-    case ConfigParser.parse_args(args) do
+    argv =
+      Enum.map(args, fn arg -> String.split(arg, "--") end)
+      |> List.flatten()
+      |> Enum.filter(fn s -> s != "" end)
+
+    case ConfigParser.parse_args(argv) do
       {:ok, config} ->
         Repl.start(config)
 
@@ -25,15 +30,15 @@ defmodule InterpolationApp.Main do
 
   defp help do
     """
-    usage: interpolation-app [options] --method1=<method> --method2=<method> --step=<step>
+    usage: interpolation-app [options] --methods=<method1,method2,...> --step=<step>
     options:
       -h, --help              Prints this message
       --accuracy=<accuracy>   Set printing accuracy
 
     methods:
       * linear
-      * lagrange2
       * lagrange3
+      * lagrange4
       * newton
     """
   end
