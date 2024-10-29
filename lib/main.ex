@@ -25,9 +25,9 @@ defmodule InterpolationApp.Main do
 
   defp extract_args(args) do
     args
-      |> Enum.map(fn arg -> String.split(arg, "--") end)
-      |> List.flatten()
-      |> Enum.filter(fn s -> s != "" end)
+    |> Enum.map(fn arg -> String.split(arg, "--") end)
+    |> List.flatten()
+    |> Enum.filter(fn s -> s != "" end)
   end
 
   defp help do
