@@ -12,12 +12,7 @@ defmodule InterpolationApp.Main do
       System.halt()
     end
 
-    argv =
-      Enum.map(args, fn arg -> String.split(arg, "--") end)
-      |> List.flatten()
-      |> Enum.filter(fn s -> s != "" end)
-
-    case ConfigParser.parse_args(argv) do
+    case ConfigParser.parse_args(extract_args(args)) do
       {:ok, config} ->
         Repl.start(config)
 
@@ -26,6 +21,13 @@ defmodule InterpolationApp.Main do
           "Неверный формат запуска!\n\n#{message}\nЧтобы получить помощь, запустите программу с флагом '--help'"
         )
     end
+  end
+
+  defp extract_args(args) do
+    args
+      |> Enum.map(fn arg -> String.split(arg, "--") end)
+      |> List.flatten()
+      |> Enum.filter(fn s -> s != "" end)
   end
 
   defp help do
