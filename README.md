@@ -37,7 +37,7 @@
 
 Приложение должно быть организовано следующим образом:
 
-```txt
+```text
     +---------------------------+
     | обработка входного потока |
     +---------------------------+
@@ -61,7 +61,7 @@
 
 Потоковый режим для алгоритмов, работающих с группой точек должен работать следующим образом:
 
-```txt
+```text
 o o o o o o . . x x x
   x x x . . o . . x x x
     x x x . . o . . x x x
@@ -85,7 +85,7 @@ o o o o o o . . x x x
 
 Пример вычислений для шага `1.0` и функции `sin(x)`:
 
-```txt
+```ocaml
 Ввод первых двух точек (в данном примере X Y через пробел):
 0 0.00
 1.571 1
@@ -150,7 +150,7 @@ o o o o o o . . x x x
 
 ### Архитектура приложения
 
-```txt
+```text
 +---------------------------+
 |   Обработка конфигурации  |
 |   и аргументов программы  |
@@ -343,7 +343,7 @@ mix test --trace
 
 Help message:
 
-```man
+```text
 usage: interpolation-app [options] --methods=<method1,method2,...> --step=<step>
 options:
   -h, --help              Prints this message
@@ -364,7 +364,7 @@ methods:
 cat data/sinx.csv | ./out/interpolation-app --methods=linear,newton,lagrange4 --step=1 --accuracy=3
 ```
 
-```txt
+```ocaml
 ❯ ./out/interpolation-app --methods=linear,newton,lagrange4 --step=1
 Введите 'quit', чтобы закончить ввод.
 Введите узлы интерполяции:
@@ -454,7 +454,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 | Ссылка | Описание |
 | --- | --- |
-| [github.com/maxbarsukov/itmo/4 вычмат/лабораторные/lab5](https://github.com/maxbarsukov/itmo/tree/master/4%20%D0%B2%D1%8B%D1%87%D0%BC%D0%B0%D1%82/%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5/lab5) | **Вычмат**: ЛР 5 по **интерполяции** функции |
+| [github.com/maxbarsukov/itmo/4 вычмат/лабораторные/lab5](https://github.com/maxbarsukov/itmo/tree/master/4%20%D0%B2%D1%8B%D1%87%D0%BC%D0%B0%D1%82/%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5/lab5) | Вычмат: ЛР 5 по интерполяции функции |
 | [en.wikipedia.org/wiki/Interpolation](https://en.wikipedia.org/wiki/Interpolation) | Что такое интерполяция? |
 | [elixirschool.com/ru/lessons/intermediate/concurrency](https://elixirschool.com/ru/lessons/intermediate/concurrency) | Параллелизм в Elixir |
 | [elixirschool.com/ru/lessons/advanced/otp_concurrency](https://elixirschool.com/ru/lessons/advanced/otp_concurrency) | Параллелизм в OTP |
